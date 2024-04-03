@@ -1,0 +1,24 @@
+body{
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "section image image"
+        "section image image";
+
+    grid-template-columns: 1.75fr .5fr .5fr;
+
+    header{
+        display: flex;
+        grid-area: header;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    img{
+        grid-area: image;
+    }
+
+    section{
+        grid-area: section;
+    }
+}
