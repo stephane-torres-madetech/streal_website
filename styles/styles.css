@@ -1,24 +1,53 @@
-body{
-    display: grid;
-    grid-template-areas: 
-        "header header header"
-        "section image image"
-        "section image image";
+@media only screen and (max-width: 600px) {
+    body{
+        display: grid;
+        grid-template-areas: 
+            "header header header"
+            "section section section"
+            "image image image";
 
-    grid-template-columns: 1.75fr .5fr .5fr;
+        grid-template-rows: .35fr 1fr 1fr;
 
-    header{
-        display: flex;
-        grid-area: header;
-        justify-content: space-between;
-        align-items: center;
-    }
+        header{
+            grid-area: header;
+        }
 
-    img{
-        grid-area: image;
-    }
+        section{
+            grid-area: section;
+        }
 
-    section{
-        grid-area: section;
-    }
+        img{
+            grid-area: image;
+        }
+    }    
 }
+
+@media only screen and (min-width: 601px) {
+    body{
+        display: grid;
+        grid-template-areas: 
+            "header header header header"
+            "section section image image"
+            "section section image image";
+    
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+        header{
+            display: flex;
+            grid-area: header;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        img{
+            grid-area: image;
+            width: 100%;
+        }
+    
+        section{
+            grid-area: section;
+        }
+    }
+    
+}
+
