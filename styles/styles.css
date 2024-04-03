@@ -1,23 +1,52 @@
+:root{
+    --primary-colour-500: #3c5cc2;
+    --primary-backgroud-colour-50: #e9ecf8;
+    --complementary-colour-800: #c2a33c;
+    --complementary-colour-500: #fbe04d;
+
+}
+
+body{
+    background-color: var(--primary-backgroud-colour-50);
+    padding: 1rem;
+    
+    a{
+        color: var(--primary-colour-500);
+        transition: color 200ms ease-in;
+        &:hover{
+            color: var(--complementary-colour-800);
+            transform: scale(1.2);
+            transition: transfrom 200ms ease-in;
+            transition: color 200ms ease-out;
+        }
+    }
+}
+
 @media only screen and (max-width: 600px) {
     body{
         display: grid;
         grid-template-areas: 
             "header header header"
             "section section section"
-            "image image image";
+            "image image image"
+            "main main main";
 
-        grid-template-rows: .35fr 1fr 1fr;
+        grid-template-rows: .35fr 1fr 1fr 1fr;
 
         header{
             grid-area: header;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        section{
+        section.hero{
             grid-area: section;
         }
 
         img{
             grid-area: image;
+            width: 100%;
         }
     }    
 }
@@ -28,7 +57,9 @@
         grid-template-areas: 
             "header header header header"
             "section section image image"
-            "section section image image";
+            "section section image image"
+            "main main main main"
+            "main main main main";
     
         grid-template-columns: 1fr 1fr 1fr 1fr;
     
@@ -44,8 +75,12 @@
             width: 100%;
         }
     
-        section{
+        section.hero{
             grid-area: section;
+        }
+
+        section.main{
+            grid-area: main;
         }
     }
     
