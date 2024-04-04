@@ -9,7 +9,21 @@ radioGroup.forEach((option) => {
     if (option.checked) {
       resultText.textContent = `${option.value}`;
     }
+    setOpinionStyle();
   });
 });
 
+function setOpinionStyle() {
+  if (resultText.textContent == "hot") {
+    resultText.style.color = "red";
+    resultText.style.fontSize = "2rem";
+    resultText.style.fontWeight = "bold";
+  }
 
+  if (resultText.textContent == "not") {
+    resultText.textContent += " \u2639";
+    resultText.style.color = "blue";
+    resultText.style.fontSize = "1.25rem";
+    resultText.style.fontWeight = "normal";
+  }
+}
