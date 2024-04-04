@@ -33,6 +33,10 @@ body {
     margin: 0;
   }
 
+  .opinions {
+    display: flex;
+  }
+
   .emoji {
     font-size: 2rem;
     cursor: pointer;
@@ -161,9 +165,21 @@ body {
 
     footer {
       grid-area: footer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
       h3 {
         text-align: center;
+      }
+
+      .opinions {
+        min-height: 5rem;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
 
       div {
